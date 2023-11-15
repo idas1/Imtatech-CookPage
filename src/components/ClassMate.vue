@@ -88,4 +88,16 @@ export default {
         gap: 15px;
     }
     
+    @media only screen and (max-width:739px) {
+    .ClassMate-items{
+        width: 80%;
+    }
+    
+    
+    }
+    @media only screen and (min-width:739px) and (max-width:1023px){
+        .ClassMate-items{
+        width: 49%;
+        }
+    }
 </style>
