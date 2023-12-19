@@ -49,29 +49,65 @@
                         </ul>
                     </div>
                 </div>
-                <div class="infor-icon">
+                <RouterLink to="/cartshopping">
+                    <div class="infor-icon">
                     <IconInfor/>
+                    <div class="count-item">{{ CountItem }}</div>
                 </div>
+                </RouterLink>
                 
-                <button class="header-right-login" id="none-header">Log in
-                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-                        <path d="M11.75 2.75H14.75C15.1478 2.75 15.5294 2.90804 15.8107 3.18934C16.092 3.47064 16.25 3.85218 16.25 4.25V14.75C16.25 15.1478 16.092 15.5294 15.8107 15.8107C15.5294 16.092 15.1478 16.25 14.75 16.25H11.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M8 13.25L11.75 9.5L8 5.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M11.75 9.5H2.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                </button>
+                
+            <RouterLink v-if="!isLoggedIn" to="/login">
+                  <ButtonPage :content="getUserContent()" />
+            </RouterLink>
+            <RouterLink v-else to="#" @click="handleLogout">
+                <ButtonPage :content="'Logout ' + user.email" />
+            </RouterLink>
+            <!-- <RouterLink to="/login">
+                <ButtonPage :content="getUserContent()" />
+            </RouterLink>  -->
+
             </div>
         </header>
 </template>
 
 <script>
-import IconInfor from './icons/IconInfor.vue';
 
+import ButtonPage from './ButtonPage.vue';
+import IconInfor from './icons/IconInfor.vue';
+import { mapActions } from 'vuex';
 
 
 export default {
     
-    components: { IconInfor },
+    components: { IconInfor, ButtonPage },
+    computed:{
+        CountItem(){
+            return this.$store.state.ClassMateItem.filter(item => item.IsCart).length;
+      },
+    isLoggedIn() {
+      return this.$store.getters.isAuthenticated;
+    },
+    user() {
+      return this.$store.state.user;
+    },  
+    },
+    
+    
+methods: {
+  getUserContent() {
+    
+    return this.isLoggedIn ? ` ${this.user.displayName || this.user.email}` : 'Login';
+  },
+  ...mapActions(['signOut']),
+
+    handleLogout() {
+      this.signOut();
+    },
+},
+
+    
+
 };
 </script>
 
@@ -200,5 +236,22 @@ header .header-right{
     display: flex;
     align-items: center;
     display: none;
+}
+.count-item{
+    position: absolute;
+    width: 44%;
+    height: 50%;
+    background-color: #D27722;
+    top: -16%;
+    right: 7%;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+.infor-icon{
+    position: relative;
 }
 </style>

@@ -13,60 +13,39 @@
                             <p>{{ item.cateTittle }}</p>
                         </div>
                     </div>
-                    <ButtonPage content="learn"/>
+                    <ButtonPage content="learn" @click="addToCart(item)"/>
                 </div>
-               
+              
     </div>
+
 </template>
 
 <script>
 
 import ButtonPage from './ButtonPage.vue';
+import { mapState } from 'vuex';
 
 export default {
-    data() {
-        return {
-            ClassMateItem: [
-                {
-                    id: 1,
-                    logoCate: "./src/img/classmate-2.jpg",
-                    name: "Class for kids",
-                    cateTittle: "Master baking: from rustic bread to delicate pastries",
-                },
-                {
-                    id: 2,
-                    logoCate: "./src/img/classmate-3.jpg",
-                    name: "Class for husband",
-                    cateTittle: "Master baking: from rustic bread to delicate pastries",
-                },
-                {
-                    id: 3,
-                    logoCate: "./src/img/classmate-1.jpg",
-                    name: "Class for chefs",
-                    cateTittle: "Master baking: from rustic bread to delicate pastries",
-                },
-                {
-                    id: 4,
-                    logoCate: "./src/img/classmate-4.jpg",
-                    name: "Class for family",
-                    cateTittle: "Master baking: from rustic bread to delicate pastries",
-                },
-                {
-                    id: 5,
-                    logoCate: "./src/img/classmate-5.jpg",
-                    name: "Class for woman",
-                    cateTittle: "Master baking: from rustic bread to delicate pastries",
-                },
-                {
-                    id: 6,
-                    logoCate: "./src/img/classmate-6.jpg",
-                    name: "Class for couple",
-                    cateTittle: "Master baking: from rustic bread to delicate pastries",
-                },
-            ],
-        };
+  
+    computed: {
+  ...mapState(['ClassMateItem'])
+},
+    // computed:{
+    //     ClassMateItem()
+    //     {
+    //         return this.$store.mapState(['ClassMateItem']),
+    //         console.log(this.$store.mapState(['ClassMateItem']))
+    //     },
+
+    // },
+    methods:{
+        addToCart(item){
+            this.$store.commit('setIsCart', { id: item.id, value: true });
+            console.log(item);
+        },
+
     },
-    components: { ButtonPage, ButtonPage }
+    components: { ButtonPage}
 };
 </script>
 <style lang="css">

@@ -1,25 +1,9 @@
 <template>
-  <!-- <MainHome />
-  <HomeCookClass /> -->
+  
   <RouterView/>
 </template>
       
-<!-- <script>
-import MainHome from './components/MainHome.vue';
-import HomeCookClass from './components/PageCookClass/HomeCookClass.vue';
 
-export default{
-   name:"App",
-   components:
-   { MainHome, HomeCookClass },
-   data() {
-    return {
-      
-    };
-   },
-};
-
-</script> -->
 
 <style lang="css">
 :root{
