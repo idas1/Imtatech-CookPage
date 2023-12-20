@@ -66,6 +66,7 @@
 import FooterPage from '../components/FooterPage.vue';
 import HeaderMain from '../components/HeaderMain.vue';
 
+
   export default {
     data() {
         return {
@@ -103,7 +104,7 @@ import HeaderMain from '../components/HeaderMain.vue';
 };
   </script>
   
-  <style scoped lang="css">
+  <style  lang="css">
   .parent-image{
     display: flex;
     flex-direction: row;
