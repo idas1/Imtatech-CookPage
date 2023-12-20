@@ -73,19 +73,19 @@ import HeaderMain from '../components/HeaderMain.vue';
             images: [
               {
                 id:1,
-                img:"./src/img/avt-about-1.png",
+                img:"/avt-about-1.png",
                 name:"John Paul",
                 service:"CEO",
               },
               
               
               { id:2, 
-                img:"./src/img/avt-about-2.png",
+                img:"/avt-about-2.png",
                 name:"Alex Sen",
                 service:"DEV",
               },
               { id:3,
-                img:"./src/img/avt-about-3.png",
+                img:"/avt-about-3.png",
                 name:"Victor Leo",
                 service:"Marketing",
             },
