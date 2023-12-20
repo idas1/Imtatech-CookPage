@@ -171,8 +171,11 @@ export default {
 }
 .btn-gg {
   background-color: unset;
-  padding: 5px 0;
+  padding: 8px 0 5px 0;
   border: #d27722 1px solid;
+}
+.alert-danger{
+  color: red;
 }
 input:focus {
   outline: none;

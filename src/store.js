@@ -23,42 +23,42 @@ export default createStore({
     ClassMateItem: [
       {
           id: 1,
-          logoCate: "./src/img/classmate-2.jpg",
+          logoCate: "/classmate-2.jpg",
           name: "Class for kids",
           cateTittle: "Master baking: from rustic bread to delicate pastries",
           IsCart:false,
       },
       {
           id: 2,
-          logoCate: "./src/img/classmate-3.jpg",
+          logoCate: "/classmate-3.jpg",
           name: "Class for husband",
           cateTittle: "Master baking: from rustic bread to delicate pastries",
           IsCart:false,
       },
       {
           id: 3,
-          logoCate: "./src/img/classmate-1.jpg",
+          logoCate: "/classmate-1.jpg",
           name: "Class for chefs",
           cateTittle: "Master baking: from rustic bread to delicate pastries",
           IsCart:false,
       },
       {
           id: 4,
-          logoCate: "./src/img/classmate-4.jpg",
+          logoCate: "/classmate-4.jpg",
           name: "Class for family",
           cateTittle: "Master baking: from rustic bread to delicate pastries",
           IsCart:false,
       },
       {
           id: 5,
-          logoCate: "./src/img/classmate-5.jpg",
+          logoCate: "/classmate-5.jpg",
           name: "Class for woman",
           cateTittle: "Master baking: from rustic bread to delicate pastries",
           IsCart:false,
       },
       {
           id: 6,
-          logoCate: "./src/img/classmate-6.jpg",
+          logoCate: "/classmate-6.jpg",
           name: "Class for couple",
           cateTittle: "Master baking: from rustic bread to delicate pastries",
           IsCart:false,
@@ -88,9 +88,9 @@ export default createStore({
   },
   actions: {
     
-    async signUp({ commit }, { email, password}) {
+    async signUp({ commit }, { email, password }) {
       try {
-        const userCredential = await createUserWithEmailAndPassword(auth,email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         commit('setUser', userCredential.user);
       } catch (error) {
         console.error(error.message);
@@ -103,19 +103,8 @@ export default createStore({
         commit('setUser', userCredential.user);
         
       } catch (error) {
-        // console.error(error.message);
-        let errorCode = error.code;
-        error.value = error.message;
-        console.log(error);
-        switch (errorCode)
-        {
-          case 'auth/invalid-credential':
-        error.message = 'Thông tin đăng nhập không hợp lệ.';
-        break;
-        }
+        console.error(error.message);
         throw error;
-        
-        
       }
     },
     async signInWithGoogle({ commit }) {
@@ -124,7 +113,6 @@ export default createStore({
           const userCredential = await signInWithPopup(auth, provider);
           commit('setUser', userCredential.user);
         } catch (error) {
-          console.log(error);
           console.error(error.message);
           throw error;
         }
