@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-header"><h2>Login</h2></div>
           <div class="card-body">
-            <div v-if="error" class="alert alert-danger">{{ error }}</div>
+            
             <form class="form-controller" action="#" @submit.prevent="Login">
               <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
@@ -38,6 +38,7 @@
                   />
                 </div>
               </div>
+              <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
               <div class="form-group row mb-0">
                 <div class="col-md-8 offset">
@@ -91,8 +92,10 @@ export default {
         await store.dispatch('signIn', {
           email: email.value,
           password: password.value
+          
         })
         router.push('/')
+        
       } catch (err) {
         error.value = err.message
       }

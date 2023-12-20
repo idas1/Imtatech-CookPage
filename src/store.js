@@ -88,9 +88,9 @@ export default createStore({
   },
   actions: {
     
-    async signUp({ commit }, { email, password }) {
+    async signUp({ commit }, { email, password}) {
       try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth,email, password);
         commit('setUser', userCredential.user);
       } catch (error) {
         console.error(error.message);
@@ -103,8 +103,19 @@ export default createStore({
         commit('setUser', userCredential.user);
         
       } catch (error) {
-        console.error(error.message);
+        // console.error(error.message);
+        let errorCode = error.code;
+        error.value = error.message;
+        console.log(error);
+        switch (errorCode)
+        {
+          case 'auth/invalid-credential':
+        error.message = 'Thông tin đăng nhập không hợp lệ.';
+        break;
+        }
         throw error;
+        
+        
       }
     },
     async signInWithGoogle({ commit }) {
@@ -113,6 +124,7 @@ export default createStore({
           const userCredential = await signInWithPopup(auth, provider);
           commit('setUser', userCredential.user);
         } catch (error) {
+          console.log(error);
           console.error(error.message);
           throw error;
         }
@@ -155,17 +167,17 @@ export default createStore({
     },
 
 
-    restoreUserFromLocalStorage({ commit }) {
-      const userString = localStorage.getItem('user');
-      if (userString) {
-        const user = JSON.parse(userString);
-        commit('setUser', user);
-        // Kiểm tra và lưu displayName vào state.user
-        if (user.displayName) {
-          commit('setDisplayName', user.displayName);
-        }
-      }
-    },
+    // restoreUserFromLocalStorage({ commit }) {
+    //   const userString = localStorage.getItem('user');
+    //   if (userString) {
+    //     const user = JSON.parse(userString);
+    //     commit('setUser', user);
+    //     // Kiểm tra và lưu displayName vào state.user
+    //     if (user.displayName) {
+    //       commit('setDisplayName', user.displayName);
+    //     }
+    //   }
+    // },
     
     
     

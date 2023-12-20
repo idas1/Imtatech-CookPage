@@ -5,7 +5,7 @@
           <div class="card">
             <div class="card-header"><p>Register</p></div>
             <div class="card-body">
-              <div v-if="error" class="alert alert-danger">{{error}}</div>
+              
               <form class="form-controller" action="#" @submit.prevent="Register">
                 <div class="form-group row">
                   <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
@@ -55,6 +55,7 @@
                     />
                   </div>
                 </div>
+                <div v-if="error" class="alert alert-danger">{{error}}</div>
   
                 <div class="form-group row mb-0">
                   <div class="col-md-8 offset-md-4">
@@ -88,9 +89,10 @@
       const Register = async () => {
         try {
           await store.dispatch('signUp', {
+            
             email: email.value,
             password: password.value,
-            name: name.value
+            name: name.value,
           })
           router.push('/')
         }
