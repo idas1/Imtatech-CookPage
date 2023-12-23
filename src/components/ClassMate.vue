@@ -1,5 +1,9 @@
 <template>
     <div class="ClassMate">
+        <div v-if="showModal">
+            <Modal @cancel="Toggle"/>
+        </div>
+       
         <div class="ClassMate-items" v-for="item in ClassMateItem" :key="item.id">
                     <div class="class-logo-item">
                         <img v-bind:src="item.logoCate" alt="Category Logo" />
@@ -24,8 +28,15 @@
 
 import ButtonPage from './ButtonPage.vue';
 import { mapState } from 'vuex';
+import Modal from './Modal.vue';
 
 export default {
+    data() {
+        return {
+            showModal: false,
+            
+        };
+    },
   
     computed: {
   ...mapState(['ClassMateItem'])
@@ -42,10 +53,15 @@ export default {
         addToCart(item){
             this.$store.commit('setIsCart', { id: item.id, value: true });
             console.log(item);
+            this.showModal = true;
+            
+        },
+        Toggle(){
+            this.showModal= !this.showModal;
         },
 
     },
-    components: { ButtonPage}
+    components: { ButtonPage,Modal}
 };
 </script>
 <style lang="css">

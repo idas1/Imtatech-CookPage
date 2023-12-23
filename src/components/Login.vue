@@ -95,7 +95,7 @@ export default {
           
         })
         router.push('/')
-        
+        alert("You have successfully logged in ")       
       } catch (err) {
         error.value = err.message
       }
