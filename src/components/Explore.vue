@@ -26,7 +26,7 @@ export default {
         Explore:[
             {
                 id:1,
-                img:"./src/img/explore-our.png",
+                img:"/explore-our.png",
                 header:"Explore Our Culinary Experts",
                 number:1,
                 content:"Browser button",
@@ -34,7 +34,7 @@ export default {
             },
             {
                 id:2,
-                img:"./src/img/pefect match.png",
+                img:"/pefect match.png",
                 header:"Select Your Perfect Match",
                 number:2,
                 content:"",
@@ -42,7 +42,7 @@ export default {
             },
             {
                 id:1,
-                img:"./src/img/enjoy.png",
+                img:"/enjoy.png",
                 header:"Enjoy Your Interactive Lesson",
                 number:3,
                 content:"Sign up for free",

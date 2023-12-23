@@ -29,37 +29,37 @@ export default {
                 
                 {
                     id: 1,
-                    logoCate:"./src/img/cate-item-1.png",
+                    logoCate:"/cate-item-1.png",
                     name:"Bakery",
                     cateTittle:"Master baking: from rustic bread to delicate pastries",
                 },
                 {
                     id: 2,
-                    logoCate:"./src/img/cate-item-2.png",
+                    logoCate:"/cate-item-2.png",
                     name:"Vegan Cooking",
                     cateTittle:"Master baking: from rustic bread to delicate pastries",
                 },
                 {
                     id: 3,
-                    logoCate:"./src/img/cate-item-3.png",
+                    logoCate:"/cate-item-3.png",
                     name:"Seafood",
                     cateTittle:"Master baking: from rustic bread to delicate pastries",
                 },
                 {
                     id: 4,
-                    logoCate:"./src/img/cate-item-4.png",
+                    logoCate:"/cate-item-4.png",
                     name:"BBQ & Grilling",
                     cateTittle:"Master baking: from rustic bread to delicate pastries",
                 },
                 {
                     id: 5,
-                    logoCate:"./src/img/cate-item-5.png",
+                    logoCate:"/cate-item-5.png",
                     name:"Wine Pairing",
                     cateTittle:"Master baking: from rustic bread to delicate pastries",
                 },
                 {
                     id: 6,
-                    logoCate:"./src/img/cate-item-7.png",
+                    logoCate:"/cate-item-7.png",
                     name:"Cake Decorating",
                     cateTittle:"Master baking: from rustic bread to delicate pastries",
                 },

@@ -25,19 +25,19 @@ export default {
                 
                 {
                     id: 1,
-                    logoBene:"./src/img/benefit-1.png",
+                    logoBene:"/benefit-1.png",
                     name:"Expert Chefs",
                     beneTittle:"Learn from the best. Our platform features professional chefs from around the world who bring their unique experiences and culinary secrets to every class.",
                 },
                 {
                     id: 2,
-                    logoBene:"./src/img/benefit-2.png",
+                    logoBene:"/benefit-2.png",
                     name:"Save Time and Money",
                     beneTittle:"Learn from the best. Our platform features professional chefs from around the world who bring their unique experiences and culinary secrets to every class.",
                 },
                 {
                     id: 3,
-                    logoBene:"./src/img/benefit-3.png",
+                    logoBene:"/benefit-3.png",
                     name:"Accessible Cooking",
                     beneTittle:"Learn from the best. Our platform features professional chefs from around the world who bring their unique experiences and culinary secrets to every class.",
                 },

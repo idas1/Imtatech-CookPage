@@ -106,25 +106,25 @@ export default {
             BlogItem:[
                 {
                     id:1,
-                    image:"./src/img/blog-item-1.png",
+                    image:"/blog-item-1.png",
                     title:"Mastering the Art of Homemade Pizza",
 
                 },
                 {
                     id:2,
-                    image:"./src/img/blog-item-2.png",
+                    image:"/blog-item-2.png",
                     title:"Delectable Homemade Ice Cream",
 
                 },
                 {
                     id:3,
-                    image:"./src/img/blog-item-3.png",
+                    image:"/blog-item-3.png",
                     title:"How to Prepare Authentic Mexican Tacos",
 
                 },
                 {
                     id:4,
-                    image:"./src/img/blog-item-4.png",
+                    image:"/blog-item-4.png",
                     title:"Tips and Techniques for a Restaurant-Quality Steak",
 
                 },
