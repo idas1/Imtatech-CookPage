@@ -176,6 +176,7 @@ export default {
 }
 .alert-danger{
   color: red;
+  text-align: center;
 }
 input:focus {
   outline: none;

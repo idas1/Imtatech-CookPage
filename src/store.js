@@ -91,7 +91,7 @@ export default createStore({
     async signUp({ commit }, { email, password }) {
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        commit('setUser', userCredential.user);
+        commit('setUser', userCredential.user)
       } catch (error) {
         console.error(error.message);
         throw error;
@@ -104,6 +104,13 @@ export default createStore({
         
       } catch (error) {
         console.error(error.message);
+        switch (error.code) {
+          case 'auth/invalid-credential':
+            error.message = 'wrong email or password.';
+            break;
+          
+          
+        };
         throw error;
       }
     },
