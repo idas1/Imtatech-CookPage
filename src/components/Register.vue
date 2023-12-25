@@ -95,6 +95,7 @@
             name: name.value,
           })
           router.push('/')
+          alert("You have successfully registered an account ") 
         }
         catch (err) {
           error.value = err.message
